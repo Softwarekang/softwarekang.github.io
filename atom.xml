@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ankangan.book</id>
     <title>Gridea</title>
-    <updated>2022-04-12T03:28:46.766Z</updated>
+    <updated>2022-04-12T03:29:18.936Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ankangan.book"/>
     <link rel="self" href="https://ankangan.book/atom.xml"/>
@@ -10,6 +10,15 @@
     <logo>https://ankangan.book/images/avatar.png</logo>
     <icon>https://ankangan.book/favicon.ico</icon>
     <rights>All rights reserved 2022, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[Test]]></title>
+        <id>https://ankangan.book/post/test/</id>
+        <link href="https://ankangan.book/post/test/">
+        </link>
+        <updated>2022-04-12T03:29:08.000Z</updated>
+        <content type="html"><![CDATA[<p>aa</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>https://ankangan.book/post/hello-gridea/</id>
