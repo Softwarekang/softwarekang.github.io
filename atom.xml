@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://ankangan.book</id>
+    <id>http://softwarekang.github.io/ankangan.book/</id>
     <title>Gridea</title>
-    <updated>2022-04-12T03:32:15.366Z</updated>
+    <updated>2022-04-12T04:44:39.936Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="http://ankangan.book"/>
-    <link rel="self" href="http://ankangan.book/atom.xml"/>
+    <link rel="alternate" href="http://softwarekang.github.io/ankangan.book/"/>
+    <link rel="self" href="http://softwarekang.github.io/ankangan.book/atom.xml"/>
     <subtitle>温故而知新</subtitle>
-    <logo>http://ankangan.book/images/avatar.png</logo>
-    <icon>http://ankangan.book/favicon.ico</icon>
+    <logo>http://softwarekang.github.io/ankangan.book/images/avatar.png</logo>
+    <icon>http://softwarekang.github.io/ankangan.book/favicon.ico</icon>
     <rights>All rights reserved 2022, Gridea</rights>
     <entry>
         <title type="html"><![CDATA[Test]]></title>
-        <id>http://ankangan.book/post/test/</id>
-        <link href="http://ankangan.book/post/test/">
+        <id>http://softwarekang.github.io/ankangan.book/post/test/</id>
+        <link href="http://softwarekang.github.io/ankangan.book/post/test/">
         </link>
         <updated>2022-04-12T03:29:08.000Z</updated>
         <content type="html"><![CDATA[<p>aa</p>
@@ -21,8 +21,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>http://ankangan.book/post/hello-gridea/</id>
-        <link href="http://ankangan.book/post/hello-gridea/">
+        <id>http://softwarekang.github.io/ankangan.book/post/hello-gridea/</id>
+        <link href="http://softwarekang.github.io/ankangan.book/post/hello-gridea/">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
