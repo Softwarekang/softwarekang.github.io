@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://softwarekang.github.io</id>
     <title>Note Site</title>
-    <updated>2022-04-12T10:44:56.437Z</updated>
+    <updated>2022-04-16T07:35:55.468Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://softwarekang.github.io"/>
     <link rel="self" href="https://softwarekang.github.io/atom.xml"/>
@@ -11,10 +11,12 @@
     <icon>https://softwarekang.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Note Site</rights>
     <entry>
-        <title type="html"><![CDATA[Dubbo 架构设计原理]]></title>
-        <id>https://softwarekang.github.io/post/dubbo-jia-gou-she-ji-yuan-li/</id>
-        <link href="https://softwarekang.github.io/post/dubbo-jia-gou-she-ji-yuan-li/">
+        <title type="html"><![CDATA[序列化 protobuf 与 json 对比]]></title>
+        <id>https://softwarekang.github.io/post/xu-lie-hua-protobuf-yu-json-dui-bi/</id>
+        <link href="https://softwarekang.github.io/post/xu-lie-hua-protobuf-yu-json-dui-bi/">
         </link>
-        <updated>2022-04-12T10:42:55.000Z</updated>
+        <updated>2022-04-16T07:32:27.000Z</updated>
+        <content type="html"><![CDATA[<p>protobuf</p>
+]]></content>
     </entry>
 </feed>
