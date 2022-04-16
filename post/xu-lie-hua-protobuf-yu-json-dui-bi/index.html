@@ -2,17 +2,17 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>序列化 protobuf 与 json 对比 | Note Site</title>
-<link rel="shortcut icon" href="https://softwarekang.github.io/favicon.ico?v=1650094553192">
+<title>序列化 - Protobuf  | Note Site</title>
+<link rel="shortcut icon" href="https://softwarekang.github.io/favicon.ico?v=1650095142379">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://softwarekang.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="序列化 protobuf 与 json 对比 | Note Site - Atom Feed" href="https://softwarekang.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="序列化 - Protobuf  | Note Site - Atom Feed" href="https://softwarekang.github.io/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="protobuf
-" />
+    <meta name="description" content="protobuf 简介
+protobuf 即 Protocol Buffers，是一种轻便高效的结构化数据存储格式，与语言、平台无关，可扩展可序列化。protobuf 性能和效率大幅度优于 JSON、XML 等其他的结构化数据格式。prot..." />
     <meta name="keywords" content="serialize,protobuf,json" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
@@ -22,7 +22,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://softwarekang.github.io">
-  <img class="avatar" src="https://softwarekang.github.io/images/avatar.png?v=1650094553192" alt="">
+  <img class="avatar" src="https://softwarekang.github.io/images/avatar.png?v=1650095142379" alt="">
   </a>
   <h1 class="site-title">
     Note Site
@@ -75,7 +75,7 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              序列化 protobuf 与 json 对比
+              序列化 - Protobuf 
             </h2>
             <div class="post-info">
               <span>
@@ -101,11 +101,16 @@
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>protobuf</p>
+                <h1 id="protobuf-简介">protobuf 简介</h1>
+<p>protobuf 即 Protocol Buffers，是一种轻便高效的结构化数据存储格式，与语言、平台无关，可扩展可序列化。protobuf 性能和效率大幅度优于 JSON、XML 等其他的结构化数据格式。protobuf 是以二进制方式存储的，占用空间小，但也带来了可读性差的缺点。<br>
+protobuf 在通信协议和数据存储等领域应用广泛，主流开源 RPC 框架 Dubbo、GRPC 等均内置了 protobuf 序列化协议，在高流量冲击下 protobuf 性能表现优异，本文来一起探索 protobuf 实现原理。</p>
 
               </div>
               <div class="toc-container">
-                
+                <ul class="markdownIt-TOC">
+<li><a href="#protobuf-%E7%AE%80%E4%BB%8B">protobuf 简介</a></li>
+</ul>
+
               </div>
             </div>
           </article>
