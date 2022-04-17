@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://softwarekang.github.io</id>
     <title>Note Site</title>
-    <updated>2022-04-17T04:29:44.660Z</updated>
+    <updated>2022-04-17T05:24:57.868Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://softwarekang.github.io"/>
     <link rel="self" href="https://softwarekang.github.io/atom.xml"/>
@@ -96,7 +96,8 @@ func protobufCodec(student *pb.Student) {
 </tbody>
 </table>
 <h3 id="压测代码">压测代码</h3>
-<p><a href="https://github.com/Softwarekang/expamle/blob/54bdc8419ceee9280a8ea6345c58e41316f49a8f/codec/serialization/expamle.go#L23-L22">源码地址</a></p>
+<p><a href="https://github.com/Softwarekang/expamle/blob/54bdc8419ceee9280a8ea6345c58e41316f49a8f/codec/serialization/expamle.go#L23-L22">源码地址</a><br>
+<a href="https://github.com/Softwarekang/expamle/blob/8f138b8a6b113b021c848b8fb7a4a6bdbfc4d856/codec/serialization/README.md#L9">压测步骤</a></p>
 <pre><code class="language-go">func jsonCodec(student *pb.Student) {
 	bytes, err := json.Marshal(student)
 	if err != nil {
@@ -218,6 +219,14 @@ func protobufCodec(student *pb.Student) {
 </table>
 <p>从压测结果来看两种序列化方式，内存方面 protobuf 相比 json 内存使用量少 2/3，耗时方面次数在10000以下时两者差别不大，但次数为 10w、100w、1000w 时，protobuf 比 json 快 3-4倍，可以看出 protobuf 在时间和内存方面都优胜于 json。</p>
 <h2 id="protobuf-原理实现">protobuf 原理实现</h2>
+<h3 id="tlv-数据存储结构">TLV 数据存储结构</h3>
+<p>TLV 即 Tag-length(可选)-value，分别从字段标示、长度、值来描述一个具体的数据，所有的数据组合起来就是一个二进制数据流。<br>
+<img src="https://softwarekang.github.io/post-images/1650171175876.png" alt="" loading="lazy"></p>
+<h3 id="protobuf-编码和存储方式">protobuf 编码和存储方式</h3>
+<p><img src="https://softwarekang.github.io/post-images/1650171315662.png" alt="" loading="lazy"><br>
+上图主要展示 protobuf 针对不同的数据采用的编码方式，protobuf 在内存优化和速度优胜更多取决于编码和存储设计，后面我们会针对每中编码实现做探索。</p>
+<h4 id="varint-编码">Varint 编码</h4>
+<p>Varint是一种使用一个或多个字节序列化整数的方法，会把整数编码为变长字节。对于32位整型数据经过Varint编码后需要1<sub>5个字节，小的数字使用1个byte，大的数字使用5个bytes。64位整型数据编码后占用1</sub>10个字节。在实际场景中小数字的使用率远远多于大数字，因此通过Varint编码对于大部分场景都可以起到很好的压缩效果。</p>
 <h3 id="资料文献">资料文献</h3>
 <p><a href="https://geektutu.com/post/hpg-benchmark.html">GoLang BenchMark</a><br>
 <a href="https://geektutu.com/post/quick-go-protobuf.html">Protobuf 简明教程</a><br>
