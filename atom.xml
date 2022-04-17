@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://softwarekang.github.io</id>
     <title>Note Site</title>
-    <updated>2022-04-17T05:24:57.868Z</updated>
+    <updated>2022-04-17T06:22:47.744Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://softwarekang.github.io"/>
     <link rel="self" href="https://softwarekang.github.io/atom.xml"/>
@@ -96,8 +96,8 @@ func protobufCodec(student *pb.Student) {
 </tbody>
 </table>
 <h3 id="压测代码">压测代码</h3>
-<p><a href="https://github.com/Softwarekang/expamle/blob/54bdc8419ceee9280a8ea6345c58e41316f49a8f/codec/serialization/expamle.go#L23-L22">源码地址</a><br>
-<a href="https://github.com/Softwarekang/expamle/blob/8f138b8a6b113b021c848b8fb7a4a6bdbfc4d856/codec/serialization/README.md#L9">压测步骤</a></p>
+<p><a href="https://github.com/Softwarekang/expamle/blob/54bdc8419ceee9280a8ea6345c58e41316f49a8f/codec/serialization/expamle.go">源码地址</a><br>
+<a href="https://github.com/Softwarekang/expamle/blob/8f138b8a6b113b021c848b8fb7a4a6bdbfc4d856/codec/serialization/README.md">压测步骤</a></p>
 <pre><code class="language-go">func jsonCodec(student *pb.Student) {
 	bytes, err := json.Marshal(student)
 	if err != nil {
@@ -226,7 +226,40 @@ func protobufCodec(student *pb.Student) {
 <p><img src="https://softwarekang.github.io/post-images/1650171315662.png" alt="" loading="lazy"><br>
 上图主要展示 protobuf 针对不同的数据采用的编码方式，protobuf 在内存优化和速度优胜更多取决于编码和存储设计，后面我们会针对每中编码实现做探索。</p>
 <h4 id="varint-编码">Varint 编码</h4>
-<p>Varint是一种使用一个或多个字节序列化整数的方法，会把整数编码为变长字节。对于32位整型数据经过Varint编码后需要1<sub>5个字节，小的数字使用1个byte，大的数字使用5个bytes。64位整型数据编码后占用1</sub>10个字节。在实际场景中小数字的使用率远远多于大数字，因此通过Varint编码对于大部分场景都可以起到很好的压缩效果。</p>
+<p>Varint是一种使用一个或多个字节序列化整数的方法，会把整数编码为变长字节。对于32位整型数据经过Varint编码后需要1<sub>5个字节，小的数字使用1个byte，大的数字使用5个bytes。64位整型数据编码后占用1</sub>10个字节。在实际场景中小数字的使用率远远多于大数字，因此通过Varint编码对于大部分场景都可以起到很好的压缩效果。<br>
+varint 核心原理为减少数字的字节数来减少内存使用<br>
+<img src="https://softwarekang.github.io/post-images/1650176366469.png" alt="" loading="lazy"><br>
+varint 编码实现: <a href="https://github.com/Softwarekang/expamle/blob/b250c25b55d639338c8f55820c8951174b6407f8/codec/serialization/varint/varint.go">varint源码</a></p>
+<pre><code class="language-go">package varint
+
+const maxVarintBytes = 10 // maximum length of a varint
+
+// 返回Varint类型编码后的字节流
+func EncodeVarint(x uint64) []byte {
+	var buf [maxVarintBytes]byte
+	var n int
+	// 下面的编码规则需要详细理解:
+	// 1.每个字节的最高位是保留位, 如果是1说明后面的字节还是属于当前数据的,如果是0,那么这是当前数据的最后一个字节数据
+	//  看下面代码,因为一个字节最高位是保留位,那么这个字节中只有下面7bits可以保存数据
+	//  所以,如果x&gt;127,那么说明这个数据还需大于一个字节保存,所以当前字节最高位是1,看下面的buf[n] = 0x80 | ...
+	//  0x80说明将这个字节最高位置为1, 后面的x&amp;0x7F是取得x的低7位数据, 那么0x80 | uint8(x&amp;0x7F)整体的意思就是
+	//  这个字节最高位是1表示这不是最后一个字节,后面7为是正式数据! 注意操作下一个字节之前需要将x&gt;&gt;=7
+	// 2.看如果x&lt;=127那么说明x现在使用7bits可以表示了,那么最高位没有必要是1,直接是0就ok!所以最后直接是buf[n] = uint8(x)
+	//
+	// 如果数据大于一个字节(127是一个字节最大数据), 那么继续, 即: 需要在最高位加上1
+	for n = 0; x &gt; 127; n++ {
+		// x&amp;0x7F表示取出下7bit数据, 0x80表示在最高位加上1
+		buf[n] = 0x80 | uint8(x&amp;0x7F)
+		// 右移7位, 继续后面的数据处理
+		x &gt;&gt;= 7
+	}
+	// 最后一个字节数据
+	buf[n] = uint8(x)
+	n++
+	return buf[0:n]
+}
+
+</code></pre>
 <h3 id="资料文献">资料文献</h3>
 <p><a href="https://geektutu.com/post/hpg-benchmark.html">GoLang BenchMark</a><br>
 <a href="https://geektutu.com/post/quick-go-protobuf.html">Protobuf 简明教程</a><br>
