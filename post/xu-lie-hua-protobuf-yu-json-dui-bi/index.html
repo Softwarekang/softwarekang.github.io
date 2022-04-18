@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://softwarekang.github.io/favicon.ico?v=1650295259086">
+<link rel="shortcut icon" href="https://softwarekang.github.io/favicon.ico?v=1650295344910">
 <link rel="stylesheet" href="https://softwarekang.github.io/styles/main.css">
 
 
@@ -35,7 +35,7 @@ protobuf 即 Protocol Buffers，是一种轻便高效的结构化数据存储格
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://softwarekang.github.io">
-        <img src="https://softwarekang.github.io/images/avatar.png?v=1650295259086" class="site-logo">
+        <img src="https://softwarekang.github.io/images/avatar.png?v=1650295344910" class="site-logo">
         <h1 class="site-title">kang note site</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -315,7 +315,7 @@ func protobufCodec(student *pb.Student) {
 <p><img src="https://softwarekang.github.io/post-images/1650171315662.png" alt="" loading="lazy"><br>
 上图主要展示 protobuf 针对不同的数据采用的编码方式，protobuf 在内存优化和速度优胜更多取决于编码和存储设计，后面我们会针对每中编码实现做探索。</p>
 <h4 id="varint-编码">Varint 编码</h4>
-<p>Varint是一种使用一个或多个字节序列化整数的方法，会把整数编码为变长字节。对于32位整型数据经过Varint编码后需要1<sub>5个字节，小的数字使用1个byte，大的数字使用5个bytes。64位整型数据编码后占用1</sub>10个字节。在实际场景中小数字的使用率远远多于大数字，因此通过Varint编码对于大部分场景都可以起到很好的压缩效果。<br>
+<p>Varint是一种使用一个或多个字节序列化整数的方法，会把整数编码为变长字节。对于32位整型数据经过Varint编码后需要1到5个字节，小的数字使用1个byte，大的数字使用5个bytes。64位整型数据编码后占用1~10个字节。在实际场景中小数字的使用率远远多于大数字，因此通过Varint编码对于大部分场景都可以起到很好的压缩效果。<br>
 varint 核心原理为减少数字的字节数来减少内存使用<br>
 <img src="https://softwarekang.github.io/post-images/1650176366469.png" alt="" loading="lazy"><br>
 varint 编码实现: <a href="https://github.com/Softwarekang/expamle/blob/b250c25b55d639338c8f55820c8951174b6407f8/codec/serialization/varint/varint.go">varint源码</a></p>
