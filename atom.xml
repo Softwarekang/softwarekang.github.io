@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://softwarekang.github.io</id>
     <title>kang note site</title>
-    <updated>2022-04-18T15:18:33.954Z</updated>
+    <updated>2022-04-18T15:21:01.930Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://softwarekang.github.io"/>
     <link rel="self" href="https://softwarekang.github.io/atom.xml"/>
@@ -264,9 +264,7 @@ func EncodeVarint(x uint64) []byte {
 }
 </code></pre>
 <h3 id="资料文献">资料文献</h3>
-<p><a href="https://geektutu.com/post/hpg-benchmark.html">GoLang BenchMark</a><br>
-<a href="https://geektutu.com/post/quick-go-protobuf.html">Protobuf 简明教程</a><br>
-<a href="https://blog.csdn.net/carson_ho/article/details/70568606">Protobuf 原理</a></p>
+<p><a href="https://geektutu.com/post/hpg-benchmark.html">GoLang BenchMark</a></p>
 ]]></content>
     </entry>
 </feed>
