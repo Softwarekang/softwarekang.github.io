@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://softwarekang.github.io</id>
     <title>kang note site</title>
-    <updated>2022-04-19T02:29:25.675Z</updated>
+    <updated>2022-06-02T03:23:59.425Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://softwarekang.github.io"/>
     <link rel="self" href="https://softwarekang.github.io/atom.xml"/>
@@ -10,6 +10,25 @@
     <logo>https://softwarekang.github.io/images/avatar.png</logo>
     <icon>https://softwarekang.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, kang note site</rights>
+    <entry>
+        <title type="html"><![CDATA[Eventhub  Details]]></title>
+        <id>https://softwarekang.github.io/post/eventhub-details/</id>
+        <link href="https://softwarekang.github.io/post/eventhub-details/">
+        </link>
+        <updated>2022-06-02T02:42:49.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="介绍">介绍</h3>
+<p>Eventhub 是一种无服务器事件总线，可使用从您的应用程序生成的事件，更轻松地大规模构建事件驱动型应用程序。EventBridge 提供从事件源（例如 TAPD ）到目标对象（例如 Faas、SaaS ）的实时数据流。您可以设置路由规则，以确定将数据发送到何处，从而构建在事件发布者和使用者完全解耦的情况下对数据源进行实时响应的应用程序架构。</p>
+<h3 id="优势">优势</h3>
+<h4 id="构建事件驱动型架构">构建事件驱动型架构</h4>
+<p>EventHub 简化了构建事件驱动型架构的流程。借助 EventHub，您的事件目标不需要知道事件源，因为您可以直接进行筛选并发布到  EventHub。无需任何设置。通过松散耦合的事件驱动型架构提高开发人员敏捷性以及应用程序弹性。</p>
+<h4 id="快速连接-saas-应用">快速连接 SaaS 应用</h4>
+<p>EventHub 从受支持的 SaaS 应用程序中提取数据，并将其发送到 SaaS 目标（通过 API 目标 – 事件的一种 HTTP 调用终端节点目标），而且不需要编写自定义集成代码。您可以使用  EventHub 连接您的 SaaS 应用程序，或使用 SaaS 应用程序中的事件来触发相应业务的工作流程。</p>
+<h4 id="安全性-可观测与可治理能力">安全性 &amp; 可观测与可治理能力</h4>
+<p>支持HTTP/HTTPS协议。<br>
+提供事件的可观测性能力，支持事件查询、审计以及全链路的追踪；<br>
+提供事件的可治理能力，支持事件流控、事件回放、以及事件重试策略等；</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Go 协程池 Ants 深度解析 ]]></title>
         <id>https://softwarekang.github.io/post/go-xie-cheng-chi-ants-shen-du-jie-xi/</id>

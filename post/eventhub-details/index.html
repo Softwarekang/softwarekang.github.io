@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>Go 协程池 Ants 深度解析  | kang note site</title>
+<title>Eventhub  Details | kang note site</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -24,9 +24,9 @@
 
 
 
-    <meta name="description" content="ants 是一个高性能的 goroutine 池，实现了对大规模 goroutine 的调度管理、goroutine 复用，允许使用者在开发并发程序的时候限制 goroutine 数量，复用资源，达到更高效执行任务的效果。
-本文注重讲解 a..." />
-    <meta name="keywords" content="goroutine pool" />
+    <meta name="description" content="介绍
+Eventhub 是一种无服务器事件总线，可使用从您的应用程序生成的事件，更轻松地大规模构建事件驱动型应用程序。EventBridge 提供从事件源（例如 TAPD ）到目标对象（例如 Faas、SaaS ）的实时数据流。您可以设置路..." />
+    <meta name="keywords" content="" />
   </head>
   <body>
     <div id="app" class="main">
@@ -97,33 +97,30 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">Go 协程池 Ants 深度解析 </h2>
-            <div class="post-date">2022-04-18</div>
-            
-              <div class="feature-container" style="background-image: url('https://softwarekang.github.io/post-images/go-xie-cheng-chi-ants-shen-du-jie-xi.PNG')">
-              </div>
+            <h2 class="post-title">Eventhub  Details</h2>
+            <div class="post-date">2022-06-02</div>
             
             <div class="post-content" v-pre>
-              <p>ants 是一个高性能的 goroutine 池，实现了对大规模 goroutine 的调度管理、goroutine 复用，允许使用者在开发并发程序的时候限制 goroutine 数量，复用资源，达到更高效执行任务的效果。<br>
-本文注重讲解 ants 源码实现以及自己设计与实现线程池的思路、要点，一起来看看吧</p>
-<!-- more -->
+              <h3 id="介绍">介绍</h3>
+<p>Eventhub 是一种无服务器事件总线，可使用从您的应用程序生成的事件，更轻松地大规模构建事件驱动型应用程序。EventBridge 提供从事件源（例如 TAPD ）到目标对象（例如 Faas、SaaS ）的实时数据流。您可以设置路由规则，以确定将数据发送到何处，从而构建在事件发布者和使用者完全解耦的情况下对数据源进行实时响应的应用程序架构。</p>
+<h3 id="优势">优势</h3>
+<h4 id="构建事件驱动型架构">构建事件驱动型架构</h4>
+<p>EventHub 简化了构建事件驱动型架构的流程。借助 EventHub，您的事件目标不需要知道事件源，因为您可以直接进行筛选并发布到  EventHub。无需任何设置。通过松散耦合的事件驱动型架构提高开发人员敏捷性以及应用程序弹性。</p>
+<h4 id="快速连接-saas-应用">快速连接 SaaS 应用</h4>
+<p>EventHub 从受支持的 SaaS 应用程序中提取数据，并将其发送到 SaaS 目标（通过 API 目标 – 事件的一种 HTTP 调用终端节点目标），而且不需要编写自定义集成代码。您可以使用  EventHub 连接您的 SaaS 应用程序，或使用 SaaS 应用程序中的事件来触发相应业务的工作流程。</p>
+<h4 id="安全性-可观测与可治理能力">安全性 &amp; 可观测与可治理能力</h4>
+<p>支持HTTP/HTTPS协议。<br>
+提供事件的可观测性能力，支持事件查询、审计以及全链路的追踪；<br>
+提供事件的可治理能力，支持事件流控、事件回放、以及事件重试策略等；</p>
 
             </div>
-            
-              <div class="tag-container">
-                
-                  <a href="https://softwarekang.github.io/tag/HCZPJx9gy/" class="tag">
-                    goroutine pool
-                  </a>
-                
-              </div>
             
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://softwarekang.github.io/post/xu-lie-hua-protobuf-yu-json-dui-bi/">
+                <a href="https://softwarekang.github.io/post/go-xie-cheng-chi-ants-shen-du-jie-xi/">
                   <h3 class="post-title">
-                    序列化 - Protobuf 原理
+                    Go 协程池 Ants 深度解析 
                   </h3>
                 </a>
               </div>
